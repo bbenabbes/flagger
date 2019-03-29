@@ -1,0 +1,2 @@
+class FlaggerError(Exception):
+    pass
