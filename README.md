@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/u8slvn/sutoppu.svg?branch=master)](https://travis-ci.com/bbenabbes/flagger)
+[![Coverage Status](https://coveralls.io/repos/github/bbenabbes/flagger/badge.svg?branch=master)](https://coveralls.io/github/bbenabbes/flagger?branch=master)
+
 # Flagger
 Workflow as code in Celery.
 

@@ -1,11 +1,9 @@
-from os import path
+import pathlib
 
 from setuptools import find_packages, setup
 
-here = path.abspath(path.dirname(__file__))
-
-with open(path.join(here, 'README.md'), encoding='utf-8') as f:
-    long_description = f.read()
+here = pathlib.Path(__file__).parent
+long_description = (here / "README.md").read_text()
 
 setup(
     name='flagger',
@@ -19,11 +17,13 @@ setup(
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Intended Audience :: Developers',
-        'Topic :: Software Development :: Orchestration',
-        'License :: MIT License',
+        "Topic :: Software Development :: Build Tools",
+        "Topic :: Software Development :: Libraries :: Python Modules",
+        'License :: OSI Approved :: MIT License',
         'Programming Language :: Python :: 3.7',
     ],
-    packages=find_packages(exclude=['tests']),
+    include_package_data=True,
+    packages=find_packages(exclude=['tests*']),
     python_requires='~=3.7',
     install_requires=[
         'celery==4.2.2',

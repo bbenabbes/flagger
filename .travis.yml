@@ -1,0 +1,15 @@
+dist: xenial
+language: python
+cache: pip
+python:
+  - "3.7"
+install:
+  - pip install .
+  - pip install coveralls
+script:
+  - flake8
+  - pylint flagger tests
+  - isort --project flagger --recursive --diff --check-only flagger tests
+  - pytest
+after_script:
+  - if [[ "$TRAVIS_PULL_REQUEST" == "false" && "$TRAVIS_PYTHON_VERSION" == "3.7" ]]; then coveralls; fi
